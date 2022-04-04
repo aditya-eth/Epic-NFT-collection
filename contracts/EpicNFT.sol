@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "hardhat/console.sol";
 
 contract MyEpicNFT is ERC721URIStorage {
-    using Counters for Counters.Counters;
+    using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
     constructor() ERC721 ("SphericalNFT", "SNFT") {
@@ -20,7 +20,8 @@ contract MyEpicNFT is ERC721URIStorage {
 
         _safeMint(msg.sender, newItemId);
 
-        _setTOkenURI(newItemId, "blah");
+        _setTokenURI(newItemId, "INSERT_YOUR_JSON_URL_HERE");
+        console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);
 
         _tokenIds.increment();
     }
