@@ -20,7 +20,7 @@ contract MyEpicNFT is ERC721URIStorage {
 
         _safeMint(msg.sender, newItemId);
 
-        _setTokenURI(newItemId, "INSERT_YOUR_JSON_URL_HERE");
+        _setTokenURI(newItemId, "https://jsonkeeper.com/b/SZ07");
         console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);
 
         _tokenIds.increment();
